@@ -2,6 +2,9 @@ require 'mkmf'
 
 env = nil
 informixdir = ENV["INFORMIXDIR"]
+
+RbConfig::MAKEFILE_CONFIG['CC'] = ENV['CC'] if ENV['CC']
+
 MSWindows = /djgpp|(cyg|ms|bcc)win|mingw/
 
 if informixdir.nil?
